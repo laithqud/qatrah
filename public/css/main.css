@@ -1,0 +1,77 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+:root {
+  /* === Primary Colors === */
+  --primary-1: #00adb5; /* Teal */
+  --primary-2: #0097b2; /* Darker Teal */
+  --primary-3: #ff914d; /* Orange */
+  --primary-4: #545454; /* Gray */
+  --primary-5: #000000; /* Black */
+  --primary-6: #ffffff; /* White */
+
+  /* === Secondary Colors === */
+  --secondary-1: #DDECEF;  
+  --secondary-2: #C4E2E8;  
+  --secondary-3: #F6E7DD;  
+  --secondary-4: #EDEDED;  
+  --secondary-5: #FBBB94;
+
+  /* === Supporting Colors === */
+  --text-color: var(--primary-5);
+  --background-color: #ffffff;
+  --card-background: #f9f9f9;
+  --border-color: #e0e0e0;
+}
+
+.active-link {
+    border-bottom: 3px solid var(--primary-3); /* Orange underline */
+    padding-bottom: 2px; /* Optional spacing for aesthetic */
+}
+
+.nunito-font {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
