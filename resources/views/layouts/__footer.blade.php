@@ -1,4 +1,4 @@
-<footer class="text-lg-start w-100 pt-4 position-fixed bottom-0"
+<footer class="text-lg-start w-100 pt-4 mt-5"
     style="background-color: var(--primary-6); color: var(--primary-5);">
     <div class="container text-center text-md-start">
         <div class="row">

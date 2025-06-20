@@ -30,6 +30,8 @@
     </main>
 
     @include('layouts.__footer')
+
+    @stack('scripts')
 </body>
 
 </html>
