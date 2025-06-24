@@ -44,7 +44,7 @@
                     </div>
                     <a href="" class="forgot-password">نسيت كلمة المرور؟</a>
                     <div class="form-group buttons-group">
-                        <a href="" class="btn register-button">إنشاء حساب جديد</a>
+                        <a href="/register" class="btn register-button">إنشاء حساب جديد</a>
                         <button type="submit" class="btn login-button">دخول</button>
                     </div>
                 </form>

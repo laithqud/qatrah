@@ -22,3 +22,6 @@ Route::post('/contact-us', [PublicController::class, 'submitContactForm'])->name
 Route::get('/login', function () {
     return view('public.login');
 })->name('login');
+Route::get('/register', function () {
+    return view('public.register');
+})->name('register');
