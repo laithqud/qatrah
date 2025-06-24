@@ -21,15 +21,56 @@
             </div>
 
             <div class="gallery-grid">
-                @for($i = 1; $i <= 8; $i++)
-                    <div class="gallery-item">
-                        <div class="image-container">
-                            <img src="{{ asset('images/learning.png') }}" alt="صورة من فعاليات المبادرة" class="gallery-image"
-                                data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="setModalImage(this.src)">
-                        </div>
+                {{-- @for($i = 1; $i <= 8; $i++) --}} <div class="gallery-item">
+                    <div class="image-container">
+                        <img src="{{ asset('images/learning.png') }}" alt="صورة من فعاليات المبادرة" class="gallery-image"
+                            data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="setModalImage(this.src)">
                     </div>
-                @endfor
             </div>
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="{{ asset('images/kid1.jpg') }}" alt="صورة من فعاليات المبادرة" class="gallery-image"
+                        data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="setModalImage(this.src)">
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="{{ asset('images/kid2.jpg') }}" alt="صورة من فعاليات المبادرة" class="gallery-image"
+                        data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="setModalImage(this.src)">
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="{{ asset('images/kid3.jpg') }}" alt="صورة من فعاليات المبادرة" class="gallery-image"
+                        data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="setModalImage(this.src)">
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="{{ asset('images/login.jpg') }}" alt="صورة من فعاليات المبادرة" class="gallery-image"
+                        data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="setModalImage(this.src)">
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="{{ asset('images/about-us.jpg') }}" alt="صورة من فعاليات المبادرة" class="gallery-image"
+                        data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="setModalImage(this.src)">
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="{{ asset('images/teaching.jpg') }}" alt="صورة من فعاليات المبادرة" class="gallery-image"
+                        data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="setModalImage(this.src)">
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="{{ asset('images/cover1.jpg') }}" alt="صورة من فعاليات المبادرة" class="gallery-image"
+                        data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="setModalImage(this.src)">
+                </div>
+            </div>
+            {{-- @endfor --}}
+        </div>
         </div>
 
         <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
