@@ -6,9 +6,40 @@
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 @endpush
 
+@push('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const heroImages = [
+                "{{ asset('images/cover1.jpg') }}",
+                "{{ asset('images/teaching.jpg') }}",
+                "{{ asset('images/learning.png') }}",
+                "{{ asset('images/about-us.jpg') }}"
+            ];
+
+            const heroImage = document.querySelector('.hero-image');
+            let currentIndex = 0;
+
+            function changeHeroImage() {
+                currentIndex = (currentIndex + 1) % heroImages.length;
+                heroImage.style.opacity = 0;
+
+                setTimeout(() => {
+                    heroImage.src = heroImages[currentIndex];
+                    heroImage.style.opacity = 1;
+                }, 500);
+            }
+
+            // Change image every 1.5 seconds
+            setInterval(changeHeroImage, 2500);
+        });
+    </script>
+@endpush
+
 @section('content')
     <section class="hero-section">
-        <img src="{{ asset('images/cover1.jpg') }}" alt="مبادرة التعليم الألكتروني عن بعد" class="hero-image">
+        <div class="hero-slider">
+            <img src="{{ asset('images/cover1.jpg') }}" alt="مبادرة التعليم الألكتروني عن بعد" class="hero-image">
+        </div>
         <div class="hero-overlay">
             <div class="container d-flex flex-column align-items-center justify-content-center h-100">
                 <h1 class="hero-title nunito-font align-middle">مبادرة التعليم الألكتروني عن بعد,</h1>
@@ -37,47 +68,35 @@
                         <i class="fa-solid fa-calendar-days" style="color: #ffffff;"></i>
                     </div>
                     <div class="achievement-content nunito-font">
-                        <span class="achievement-number text-light nunito-font">+11</span>
+                        <span class="achievement-number text-light nunito-font">+5</span>
                         <span class="achievement-text text-light nunito-font">سنوات وخبرة</span>
                     </div>
                 </div>
-
+                <div class="achievement-item nunito-font">
+                    <div class="achievement-icon text-light nunito-font">
+                        <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+                    </div>
+                    <div class="achievement-content nunito-font">
+                        <span class="achievement-number text-light nunito-font">+600</span>
+                        <span class="achievement-text text-light nunito-font">متطوع</span>
+                    </div>
+                </div>
+                <div class="achievement-item nunito-font">
+                    <div class="achievement-icon text-light nunito-font">
+                        <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+                    </div>
+                    <div class="achievement-content nunito-font">
+                        <span class="achievement-number text-light nunito-font">+500</span>
+                        <span class="achievement-text text-light nunito-font">طالب</span>
+                    </div>
+                </div>
                 <div class="achievement-item nunito-font">
                     <div class="achievement-icon text-light nunito-font">
                         <i class="fa-solid fa-lightbulb" style="color: #ffffff;"></i>
                     </div>
                     <div class="achievement-content nunito-font">
-                        <span class="achievement-number text-light nunito-font">+40</span>
-                        <span class="achievement-text text-light nunito-font">نشاط وحملة</span>
-                    </div>
-                </div>
-
-                <div class="achievement-item nunito-font">
-                    <div class="achievement-icon text-light nunito-font">
-                        <i class="fa-solid fa-user" style="color: #ffffff;"></i>
-                    </div>
-                    <div class="achievement-content nunito-font">
-                        <span class="achievement-number text-light nunito-font">+12,000</span>
-                        <span class="achievement-text text-light nunito-font">متطوع</span>
-                    </div>
-                </div>
-
-                <div class="achievement-item nunito-font">
-                    <div class="achievement-icon text-light nunito-font">
-                        <i class="fa-solid fa-thumbs-up" style="color: #ffffff;"></i>
-                    </div>
-                    <div class="achievement-content nunito-font">
-                        <span class="achievement-number text-light nunito-font">+90</span>
-                        <span class="achievement-text text-light nunito-font">شريك وداعم</span>
-                    </div>
-                </div>
-                <div class="achievement-item nunito-font">
-                    <div class="achievement-icon text-light nunito-font">
-                        <i class="fa-solid fa-user" style="color: #ffffff;"></i>
-                    </div>
-                    <div class="achievement-content nunito-font">
-                        <span class="achievement-number text-light nunito-font">+70,000</span>
-                        <span class="achievement-text text-light nunito-font">مستفيد</span>
+                        <span class="achievement-number text-light nunito-font">+22000</span>
+                        <span class="achievement-text text-light nunito-font"> ساعه تطوعية</span>
                     </div>
                 </div>
             </div>

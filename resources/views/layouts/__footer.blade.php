@@ -1,7 +1,6 @@
-<footer class="text-lg-start w-100 pt-4 mt-5"
-    style="background-color: var(--primary-6); color: var(--primary-5);">
+<footer class="text-lg-start w-100 pt-4 mt-5" style="background-color: var(--primary-6); color: var(--primary-5);">
     <div class="container text-center text-md-start">
-        <div class="row">
+        <div id="contain" class="row">
 
             <div class="col-md-4 mb-4 text-center">
                 <a class="text-decoration-none" href="/home">
@@ -48,3 +47,13 @@
         © 2025 جميع الحقوق محفوظة لقطرة غيث
     </div>
 </footer>
+
+@section('styles')
+    <style>
+        @media (max-width: 768px) {
+            #contain {
+                margin-left: 0 !important;
+            }
+        }
+    </style>
+@endsection

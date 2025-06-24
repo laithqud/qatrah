@@ -1,4 +1,199 @@
-body{
+/* login.css */
+body {
     background-image: url('/images/login.jpg');
-    filter: blur(25px);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    color: white;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.blur-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+.login-container {
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.login-form-container {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 2rem;
+}
+
+.login-form {
+    background: rgba(255, 255, 255, 0);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+.login-title {
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.error {
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.forgot-password {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: white;
+}
+
+.buttons-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.register-button {
+    background-color: rgba(255, 145, 77, 0.8);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    flex: 1;
+    text-align: center;
+}
+
+.register-button:hover {
+    background-color: rgba(255, 145, 77, 1);
+    transform: translateY(-2px);
+}
+
+.login-button {
+    background-color: rgba(0, 151, 178, 0.8);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.login-button:hover {
+    background-color: rgba(0, 151, 178, 1);
+    transform: translateY(-2px);
+}
+
+.welcome-section {
+    max-width: 500px;
+    margin-right: 5rem;
+    text-align: right;
+}
+
+.welcome-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-subtitle {
+    font-size: 2.5rem;
+    font-weight: 400;
+    opacity: 0.9;
+    padding-top: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .login-container {
+        flex-direction: column;
+    }
+    
+    .welcome-section {
+        margin-right: 0;
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+    
+    .welcome-title {
+        font-size: 2.5rem;
+    }
+    
+    .welcome-subtitle {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .login-form {
+        padding: 1.5rem;
+    }
+    
+    .buttons-group {
+        flex-direction: column;
+    }
+    
+    .welcome-title {
+        font-size: 2rem;
+    }
+    
+    .welcome-subtitle {
+        font-size: 1.1rem;
+    }
 }

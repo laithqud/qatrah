@@ -1,32 +1,46 @@
 <header style="background-color: var(--primary-6)">
-    <nav class="d-flex justify-content-between align-items-center py-2 px-5">
-        <div><a class="text-decoration-none nunito-font p-2 rounded-3"
-                style="background-color: var(--primary-3); color: var(--primary-5);" href="">تسجيل
-                دخول</a></div>
-        <div class="d-flex justify-content-center align-items-center gap-3">
-            <a style="color: var(--primary-5);"
-                class="text-decoration-none nunito-font {{ request()->is('home') ? 'active-link' : '' }}"
-                href="/home">الرئيسية</a>
-            <a style="color: var(--primary-5);"
-                class="text-decoration-none nunito-font {{ request()->is('about-us') ? 'active-link' : '' }}"
-                href="/about-us">من نحن</a>
-            <a style="color: var(--primary-5);"
-                class="text-decoration-none nunito-font {{ request()->is('testimonials') ? 'active-link' : '' }}"
-                href="/testimonials">الاراء</a>
-            <a style="color: var(--primary-5);"
-                class="text-decoration-none nunito-font {{ request()->is('documents') ? 'active-link' : '' }}"
-                href="/documents">الملفات</a>
-            <a style="color: var(--primary-5);"
-                class="text-decoration-none nunito-font {{ request()->is('join-us') ? 'active-link' : '' }}"
-                href="/join-us">انضم الينا</a>
-            <a style="color: var(--primary-5);"
-                class="text-decoration-none nunito-font {{ request()->is('contact-us') ? 'active-link' : '' }}"
-                href="/contact-us">تواصل معنا</a>
+    <nav class="navbar navbar-expand-lg py-2 px-3 px-md-5">
+        <a href="/home" class="navbar-brand">
+            <img src="{{asset('images/logo.png')}}" style="width: 60px; height: 60px;" alt="شعار الموقع">
+        </a>
 
-        </div>
-        <div>
-            <a href="/home" class="text-decoration-none"><img src="{{asset('images/logo.png')}}"
-                    style="width: 70px; height: 70px;" alt="شعار الموقع"></a>
+        {{-- mobile button --}}
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars" style="color: var(--primary-5);"></i>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <div class="d-flex justify-content-start justify-content-lg-end order-lg-2">
+                <a class="text-decoration-none nunito-font p-2 rounded-3 login-btn"
+                    style="background-color: var(--primary-3); color: var(--primary-5);" href="/login">تسجيل دخول</a>
+            </div>
+            <ul class="navbar-nav gap-2 gap-lg-3 order-lg-1" style="padding-right: 250px;">
+                <li class="nav-item">
+                    <a class="nav-link nunito-font {{ request()->is('home') ? 'active-link' : '' }}"
+                        style="color: var(--primary-5);" href="/home">الرئيسية</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nunito-font {{ request()->is('about-us') ? 'active-link' : '' }}"
+                        style="color: var(--primary-5);" href="/about-us">من نحن</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nunito-font {{ request()->is('testimonials') ? 'active-link' : '' }}"
+                        style="color: var(--primary-5);" href="/testimonials">الاراء</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nunito-font {{ request()->is('documents') ? 'active-link' : '' }}"
+                        style="color: var(--primary-5);" href="/documents">الملفات</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nunito-font {{ request()->is('join-us') ? 'active-link' : '' }}"
+                        style="color: var(--primary-5);" href="/join-us">انضم الينا</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nunito-font {{ request()->is('contact-us') ? 'active-link' : '' }}"
+                        style="color: var(--primary-5);" href="/contact-us">تواصل معنا</a>
+                </li>
+            </ul>
         </div>
     </nav>
 </header>

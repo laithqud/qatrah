@@ -75,3 +75,94 @@ table {
   font-weight: 400;
   font-style: normal;
 }
+
+
+
+/* Add this to your CSS file */
+.navbar {
+    padding: 0.5rem 1rem;
+}
+
+.navbar-brand {
+    padding: 0;
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    text-align: center;
+}
+
+.nav-link:hover {
+    color: var(--primary-3) !important;
+}
+
+.active-link {
+    border-bottom: 3px solid var(--primary-3);
+    padding-bottom: 2px;
+}
+
+.login-btn {
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    margin: 0.5rem 0;
+}
+
+.login-btn:hover {
+    background-color: var(--primary-2) !important;
+    color: var(--primary-6) !important;
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background-color: var(--primary-6);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        margin-top: 1rem;
+    }
+    
+    .navbar-nav {
+        margin-bottom: 1rem;
+        padding-right: 0 !important;
+    }
+    
+    .nav-link {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--secondary-4);
+    }
+    
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    .login-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        padding: 0.5rem;
+    }
+    
+    .navbar-brand img {
+        width: 50px !important;
+        height: 50px !important;
+    }
+}

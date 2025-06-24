@@ -40,6 +40,36 @@ body {
     background-color: rgba(0, 0, 0, 0.3); 
     padding: 0 20px;
 }
+/* Hero Slider Styles */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    height: 100vh; /* Adjust as needed */
+}
+
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Adjust overlay darkness */
+    z-index: 1;
+}
 
 .container {
     max-width: 1200px;
@@ -47,6 +77,7 @@ body {
     margin: 0 auto;
     text-align: right; 
     z-index: 2;
+    padding: 20px 0;
 }
 
 .hero-title {
@@ -158,7 +189,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
+    gap: 5rem;
     margin: 0 auto;
 }
 
@@ -254,7 +285,7 @@ body {
 /* Tilted Card */
 .tilted-card {
     bottom: 0;
-    left: 0;
+    /* left: 0; */
     z-index: 1;
     transform: rotate(-5deg); /* Adjust angle as needed */
 }

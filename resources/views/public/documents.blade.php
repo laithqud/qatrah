@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="document-content nunito-font">
                                     <h3 class="document-name nunito-font">دوسية {{$i}} - الرياضيات</h3>
-                                    <p class="document-meta nunito-font">عدد الصفحات: 45 | آخر تحديث: 15/06/2023</p>
+                                    {{-- <p class="document-meta nunito-font">عدد الصفحات: 45 | آخر تحديث: 15/06/2023</p> --}}
                                     <div class="document-actions nunito-font">
                                         <a href="{{ asset('docs/dossier-' . $i . '.pdf') }}" class="btn-preview nunito-font"
                                             target="_blank">
@@ -60,7 +60,7 @@
                                 </div>
                                 <div class="document-content nunito-font">
                                     <h3 class="document-name nunito-font pt-2">ملخص {{$i}} - العلوم</h3>
-                                    <p class="document-meta nunito-font">عدد الصفحات: 12 | آخر تحديث: 10/06/2023</p>
+                                    <p class="document-meta nunito-font">عدد الصفحات: 12</p>
                                     <div class="document-actions nunito-font">
                                         <a href="{{ asset('docs/summary-' . $i . '.pdf') }}" class="btn-preview nunito-font"
                                             target="_blank">
