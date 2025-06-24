@@ -36,6 +36,10 @@ class PublicController extends Controller
     {
         return view('public.gallery');
     }
+    public function documents()
+    {
+        return view('public.documents');
+    }
 
     public function submitJoinForm(Request $request)
     {

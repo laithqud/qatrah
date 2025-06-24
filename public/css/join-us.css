@@ -1,4 +1,7 @@
 /* Join Us Page Specific Styles - Based on Screenshot */
+body{
+    background-color: var(--secondary-4);
+}
 
 .hero-section {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/join-us.jpg');

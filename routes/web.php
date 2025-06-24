@@ -13,12 +13,12 @@ Route::get('/contact-us', [PublicController::class, 'contactUs']);
 Route::get('/join-us', [PublicController::class, 'joinUs']);
 Route::get('/testimonials', [PublicController::class, 'testimonials']);
 Route::get('/gallery', [PublicController::class, 'gallery']);
+Route::get('/documents', [PublicController::class, 'documents']);
 
 // Form submission routes
 Route::post('/join-us', [PublicController::class, 'submitJoinForm'])->name('join.submit');
 Route::post('/contact-us', [PublicController::class, 'submitContactForm'])->name('contact.submit');
 
-// Login route (placeholder - no page created yet)
 Route::get('/login', function () {
-    return redirect('/join-us')->with('info', 'صفحة تسجيل الدخول قيد الإنشاء');
-});
+    return view('public.login');
+})->name('login');

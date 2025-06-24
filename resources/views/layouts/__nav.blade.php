@@ -1,6 +1,6 @@
 <header style="background-color: var(--primary-6)">
     <nav class="d-flex justify-content-between align-items-center py-2 px-5">
-        <div><a class="text-decoration-none nunito-font p-2 rounded-5"
+        <div><a class="text-decoration-none nunito-font p-2 rounded-3"
                 style="background-color: var(--primary-3); color: var(--primary-5);" href="">تسجيل
                 دخول</a></div>
         <div class="d-flex justify-content-center align-items-center gap-3">
@@ -13,6 +13,9 @@
             <a style="color: var(--primary-5);"
                 class="text-decoration-none nunito-font {{ request()->is('testimonials') ? 'active-link' : '' }}"
                 href="/testimonials">الاراء</a>
+            <a style="color: var(--primary-5);"
+                class="text-decoration-none nunito-font {{ request()->is('documents') ? 'active-link' : '' }}"
+                href="/documents">الملفات</a>
             <a style="color: var(--primary-5);"
                 class="text-decoration-none nunito-font {{ request()->is('join-us') ? 'active-link' : '' }}"
                 href="/join-us">انضم الينا</a>
