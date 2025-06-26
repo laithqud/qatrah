@@ -7,8 +7,8 @@
         <div class="d-flex align-items-center ms-auto">
             <div class="dropdown">
                 <button class="btn btn-link dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown">
-                    <img src="/images/user-avatar.png" width="40" height="40" class="rounded-circle me-2">
-                    <span>محمد أحمد</span>
+                    <img src="{{asset('images/hero.jpeg')}}" width="40" height="40" class="rounded-circle me-2">
+                    <span class="text-dark text-decoration-none">Admin </span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i> الملف الشخصي</a>

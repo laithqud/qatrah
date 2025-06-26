@@ -23,27 +23,29 @@
                         <i class="fas fa-folder-open me-2"></i> الدوسيات
                     </h3>
                     <div class="category-items">
-                        @for($i = 1; $i <= 4; $i++)
+                        @foreach ($dossiers as $dossier)
                             <div class="document-card dossier nunito-font">
                                 <div class="document-icon nunito-font">
                                     <i class="fas fa-book"></i>
                                 </div>
                                 <div class="document-content nunito-font">
-                                    <h3 class="document-name nunito-font">دوسية {{$i}} - الرياضيات</h3>
-                                    {{-- <p class="document-meta nunito-font">عدد الصفحات: 45 | آخر تحديث: 15/06/2023</p> --}}
+                                    <h3 class="document-name nunito-font">
+                                        {{ $dossier->title ?? 'دوسية بدون عنوان' }}
+                                    </h3>
                                     <div class="document-actions nunito-font">
-                                        <a href="{{ asset('docs/dossier-' . $i . '.pdf') }}" class="btn-preview nunito-font"
+                                        <a href="{{ asset('storage/' . $dossier->file_path) }}" class="btn-preview nunito-font"
                                             target="_blank">
                                             <i class="fas fa-eye"></i> معاينة
                                         </a>
-                                        <a href="{{ asset('docs/dossier-' . $i . '.pdf') }}" class="btn-download nunito-font"
+                                        <a href="{{ asset('storage/' . $dossier->file_path) }}" class="btn-download nunito-font"
                                             download>
                                             <i class="fas fa-download"></i> تحميل
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                        @endfor
+                        @endforeach
+
                     </div>
                 </div>
 
@@ -53,27 +55,29 @@
                         <i class="fas fa-file-alt me-2"></i> الملخصات
                     </h3>
                     <div class="category-items">
-                        @for($i = 1; $i <= 4; $i++)
+                        @foreach ($documents as $document)
                             <div class="document-card summary nunito-font">
                                 <div class="document-icon nunito-font">
-                                    <img class="summaries-img" src="{{ asset('images/about-us.jpg') }}" alt="ملخص Icon">
+                                    <img class="summaries-img" src="{{ asset('storage/' . $document->image_path) }}"
+                                        alt="ملخص Icon">
                                 </div>
                                 <div class="document-content nunito-font">
-                                    <h3 class="document-name nunito-font pt-2">ملخص {{$i}} - العلوم</h3>
-                                    <p class="document-meta nunito-font">عدد الصفحات: 12</p>
+                                    <h3 class="document-name nunito-font pt-2">{{ $document->name }}</h3>
+                                    <p class="document-meta nunito-font">عدد الصفحات: {{ $document->page_count }}</p>
                                     <div class="document-actions nunito-font">
-                                        <a href="{{ asset('docs/summary-' . $i . '.pdf') }}" class="btn-preview nunito-font"
+                                        <a href="{{ asset('storage/' . $document->file_path) }}" class="btn-preview nunito-font"
                                             target="_blank">
                                             <i class="fas fa-eye"></i> معاينة
                                         </a>
-                                        <a href="{{ asset('docs/summary-' . $i . '.pdf') }}" class="btn-download nunito-font"
-                                            download>
+                                        <a href="{{ asset('storage/' . $document->file_path) }}"
+                                            class="btn-download nunito-font" download>
                                             <i class="fas fa-download"></i> تحميل
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                        @endfor
+                        @endforeach
+
                     </div>
                 </div>
             </div>

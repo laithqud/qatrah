@@ -26,7 +26,7 @@
         <div class="login-form-container">
             <div class="login-form card">
                 <h2 class="login-title">تسجيل دخول</h2>
-                <form action="" method="POST">
+                <form action="{{ route('login') }}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="email">البريد الالكتروني</label>

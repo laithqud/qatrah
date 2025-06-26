@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use App\Models\Image;
+use App\Models\Dossier;
+use App\Models\Document;
 
 class PublicController extends Controller
 {
@@ -34,11 +37,14 @@ class PublicController extends Controller
 
     public function gallery()
     {
-        return view('public.gallery');
+        $images = Image::latest()->get();
+        return view('public.gallery', compact('images'));
     }
     public function documents()
     {
-        return view('public.documents');
+        $dossiers=Dossier::latest()->get();
+        $documents=Document::latest()->get();
+        return view('public.documents', compact('dossiers', 'documents'));
     }
 
     public function submitJoinForm(Request $request)

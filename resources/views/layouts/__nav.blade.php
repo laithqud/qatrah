@@ -54,11 +54,11 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nunito-font {{ request()->is('testimonials') ? 'active-link' : '' }}"
-                        style="color: var(--primary-5);" href="/testimonials">الاراء</a>
+                        style="color: var(--primary-5);" href="/testimonial">الاراء</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nunito-font {{ request()->is('documents') ? 'active-link' : '' }}"
-                        style="color: var(--primary-5);" href="/documents">الملفات</a>
+                        style="color: var(--primary-5);" href="/documents-dossiers">الملفات</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nunito-font {{ request()->is('join-us') ? 'active-link' : '' }}"

@@ -12,54 +12,57 @@
     <div class="sidebar-menu">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a href="#" class="nav-link active">
+                <a href="{{ route('dashboard') }}"
+                    class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
                     <i class="bi bi-speedometer2 me-2"></i>
                     <span>الرئيسية</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="" class="nav-link {{ request()->routeIs('admin.gallery.index') ? 'active' : '' }}">
                     <i class="bi bi-people me-2"></i>
-                    <span>المستخدمين</span>
+                    <span>الادمن</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="" class="nav-link {{ request()->routeIs('admin.gallery.index') ? 'active' : '' }}">
+                    <i class="bi bi-people me-2"></i>
+                    <span>اليوزر</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('admin.gallery.index') }}"
+                    class="nav-link {{ request()->routeIs('admin.gallery.index') ? 'active' : '' }}">
+                    <i class="bi bi-people me-2"></i>
+                    <span>الصور</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('dossiers') }}" class="nav-link {{ request()->routeIs('dossiers') ? 'active' : '' }}">
                     <i class="bi bi-box-seam me-2"></i>
-                    <span>المنتجات</span>
+                    <span>الدوسيات</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('documents') }}"
+                    class="nav-link {{ request()->routeIs('documents') ? 'active' : '' }}">
                     <i class="bi bi-receipt me-2"></i>
-                    <span>الطلبات</span>
+                    <span>الملخصات</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('testimonials') }}"
+                    class="nav-link {{ request()->routeIs('testimonials') ? 'active' : '' }}">
                     <i class="bi bi-graph-up me-2"></i>
-                    <span>التقارير</span>
+                    <span>الاراء</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/home" class="nav-link {{ request()->is('home') ? 'active' : '' }}">
                     <i class="bi bi-gear me-2"></i>
-                    <span>الإعدادات</span>
+                    <span>الموقع الرئيسي</span>
                 </a>
             </li>
         </ul>
-
-        <div class="sidebar-footer p-3 mt-auto">
-            <div class="d-flex align-items-center">
-                <img src="/images/user-avatar.png" alt="User" width="40" height="40" class="rounded-circle me-2">
-                <div>
-                    <h6 class="mb-0">محمد أحمد</h6>
-                    <small class="text-muted">مدير النظام</small>
-                </div>
-            </div>
-            <a href="#" class="btn btn-outline-light w-100 mt-3">
-                <i class="bi bi-box-arrow-left me-2"></i> تسجيل الخروج
-            </a>
-        </div>
     </div>
 </aside>
