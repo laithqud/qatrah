@@ -12,9 +12,37 @@
 
         <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
             <div class="d-flex justify-content-start justify-content-lg-end order-lg-2">
-                <a class="text-decoration-none nunito-font p-2 rounded-3 login-btn"
-                    style="background-color: var(--primary-3); color: var(--primary-5);" href="/login">تسجيل دخول</a>
+
+                {{-- If guest (not logged in), show Login button --}}
+                @guest
+                    <a class="text-decoration-none nunito-font p-2 rounded-3 login-btn"
+                        style="background-color: var(--primary-3); color: var(--primary-5);" href="{{ route('login') }}">
+                        تسجيل دخول
+                    </a>
+                @endguest
+
+                {{-- If authenticated, show profile dropdown --}}
+                @auth
+                    <div class="dropdown">
+                        <a class="btn p-2 rounded-circle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown"
+                            aria-expanded="false" style="background-color: var(--primary-3); color: var(--primary-5);">
+                            <i class="bi bi-person-circle fs-4"></i> {{-- Bootstrap icon --}}
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="">الملف الشخصي</a></li>
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button class="dropdown-item" type="submit">تسجيل خروج</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                @endauth
+
             </div>
+
             <ul class="navbar-nav gap-2 gap-lg-3 order-lg-1" style="padding-right: 250px;">
                 <li class="nav-item">
                     <a class="nav-link nunito-font {{ request()->is('home') ? 'active-link' : '' }}"
