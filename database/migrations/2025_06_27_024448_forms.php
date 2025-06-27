@@ -11,18 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('testimonials', function (Blueprint $table) {
+        Schema::create('forms', function (Blueprint $table) {
             $table->id();
-
-            $table->unsignedBigInteger('user_id'); 
-            $table->string('major'); 
-            $table->text('content');  
-
+            
+            $table->string('link');
+           
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
-
     }
 
     /**
@@ -30,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('testimonials');
+        //
     }
 };

@@ -37,10 +37,7 @@ return new class extends Migration
         });
 
 
-//         public function testimonials()
-// {
-//     return $this->hasMany(Testimonial::class);
-// }
+
 
     }
 

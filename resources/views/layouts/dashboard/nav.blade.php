@@ -11,12 +11,12 @@
                     <span class="text-dark text-decoration-none">Admin </span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i> الملف الشخصي</a>
+                    {{-- <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i> الملف الشخصي</a>
                     </li>
-                    <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i> الإعدادات</a></li>
-                    <li>
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i> الإعدادات</a></li> --}}
+                    {{-- <li>
                         <hr class="dropdown-divider">
-                    </li>
+                    </li> --}}
                     <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-left me-2"></i> تسجيل
                             الخروج</a></li>
                 </ul>

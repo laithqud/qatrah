@@ -19,15 +19,23 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link {{ request()->routeIs('admin.gallery.index') ? 'active' : '' }}">
+                <a href="{{route('admin.dashboard')}}"
+                    class="nav-link {{ request()->routeIs('admin.dashbaord') ? 'active' : '' }}">
                     <i class="bi bi-people me-2"></i>
                     <span>الادمن</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link {{ request()->routeIs('admin.gallery.index') ? 'active' : '' }}">
+                <a href="{{route('user.dashboard')}}"
+                    class="nav-link {{ request()->routeIs('user.dashboard') ? 'active' : '' }}">
                     <i class="bi bi-people me-2"></i>
-                    <span>اليوزر</span>
+                    <span>المستخدمين</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{route('forms')}}" class="nav-link {{ request()->routeIs('forms') ? 'active' : '' }}">
+                    <i class="bi bi-people me-2"></i>
+                    <span>رابط الانضمام</span>
                 </a>
             </li>
             <li class="nav-item">

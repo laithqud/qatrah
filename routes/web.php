@@ -36,11 +36,24 @@ Route::get('/dashboard', function () {
         return view('dashboard.main');
     })->name('dashboard');
 
+    Route::get('/admin-dashboard', function () {
+        return view('dashboard.admins.index');
+    })->name('admin.dashboard');
+
+    Route::get('/user-dashboard', function () {
+        return view('dashboard.users.index');
+    })->name('user.dashboard');
+
+
     Route::get('/gallery-dashboard', [GalleryController::class, 'index'])->name('admin.gallery.index');
     Route::post('/gallery', [GalleryController::class, 'store'])->name('admin.gallery.store');
     Route::delete('/gallery/{image}', [GalleryController::class, 'destroy'])->name('gallery.destroy');
 
     Route::get('testimonials', [TestimonialController::class, 'index'])->name('testimonials');
+
+    Route::get('/forms', function () {
+        return view('dashboard.google-links.index');
+    })->name('forms');
 
     Route::get('/dossiers', [DossierController::class, 'index'])->name('dossiers');
     Route::get('/dossiers-create', [DossierController::class, 'create'])->name('dossiers.create');

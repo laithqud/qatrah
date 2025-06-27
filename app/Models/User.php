@@ -33,6 +33,10 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function testimonials()
+    {
+        return $this->hasMany(Testimonial::class);
+    }
     /**
      * Get the attributes that should be cast.
      *
