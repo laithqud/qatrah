@@ -46,12 +46,13 @@ class DossierController extends Controller
     // Delete dossier and its file
     public function destroy(Dossier $dossier)
     {
-        // Delete file from storage/app/public/dossiers/...
-        Storage::disk('public')->delete($dossier->file_path);
+        if ($dossier->file_path) {
+            Storage::disk('public')->delete($dossier->file_path);
+        }
 
-        // Delete the DB record
         $dossier->delete();
 
         return back()->with('success', 'Dossier deleted successfully!');
     }
+
 }

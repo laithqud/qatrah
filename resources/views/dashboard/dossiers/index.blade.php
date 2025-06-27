@@ -41,17 +41,15 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $dossier->title }}</td>
                                     <td>
-                                        <a href="{{ $dossier->file_url }}" target="_blank"
+                                        <a href="{{ $dossier->file_path }}" target="_blank"
                                             class="btn btn-sm btn-outline-primary">
                                             <i class="bi bi-download"></i> Download
                                         </a>
                                     </td>
                                     <td>{{ $dossier->created_at->format('M d, Y') }}</td>
                                     <td>
-                                        <a href="" class="btn btn-sm btn-outline-primary">
-                                            <i class="bi bi-pencil"></i>
-                                        </a>
-                                        <form action="" method="POST" class="d-inline">
+                                        <form action="{{route('dossiers.destroy', $dossier->id)}}" method="POST"
+                                            class="d-inline">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-outline-danger"

@@ -53,9 +53,6 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="" class="btn btn-sm btn-outline-primary">
-                                            <i class="bi bi-pencil"></i>
-                                        </a>
                                         <form action="{{ route('dashboard.documents.destroy', $document->id) }}" method="POST"
                                             class="d-inline">
                                             @csrf
