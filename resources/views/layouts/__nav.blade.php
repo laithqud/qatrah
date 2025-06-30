@@ -24,17 +24,24 @@
                 {{-- If authenticated, show profile dropdown --}}
                 @auth
                     <div class="dropdown">
-                        <a class="btn p-2 rounded-circle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown"
-                            aria-expanded="false" style="background-color: var(--primary-3); color: var(--primary-5);">
-                            <i class="bi bi-person-circle fs-4"></i> {{-- Bootstrap icon --}}
+                        <a class="btn d-flex align-items-center gap-2 p-2 rounded-3" href="#" role="button" id="userDropdown" 
+                            data-bs-toggle="dropdown" aria-expanded="false" 
+                            style="background-color: var(--primary-3); color: var(--primary-5);">
+                            <i class="bi bi-person-circle fs-4"></i>
+                            <span class="nunito-font d-none d-sm-inline">{{ Auth::user()->name ?? 'المستخدم' }}</span>
                         </a>
 
                         <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="userDropdown">
-                            <li><a class="dropdown-item" href="">الملف الشخصي</a></li>
+                            <li><a class="dropdown-item nunito-font" href="{{ route('profile.show') }}">
+                                <i class="bi bi-person me-2"></i>الملف الشخصي</a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
                             <li>
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-                                    <button class="dropdown-item" type="submit">تسجيل خروج</button>
+                                    <button class="dropdown-item nunito-font" type="submit">
+                                        <i class="bi bi-box-arrow-right me-2"></i>تسجيل خروج
+                                    </button>
                                 </form>
                             </li>
                         </ul>

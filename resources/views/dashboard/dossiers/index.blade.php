@@ -8,7 +8,7 @@
             <div class="col-12">
                 <div class="d-flex justify-content-between align-items-center">
                     <h2>Dossiers</h2>
-                    <a href="{{route('dossiers.create')}}" class="btn btn-primary">
+                    <a href="{{route('admin.dossiers.create')}}" class="btn btn-primary">
                         <i class="bi bi-plus-lg"></i> Add Dossier
                     </a>
                 </div>
@@ -48,7 +48,7 @@
                                     </td>
                                     <td>{{ $dossier->created_at->format('M d, Y') }}</td>
                                     <td>
-                                        <form action="{{route('dossiers.destroy', $dossier->id)}}" method="POST"
+                                        <form action="{{route('admin.dossiers.destroy', $dossier->id)}}" method="POST"
                                             class="d-inline">
                                             @csrf
                                             @method('DELETE')

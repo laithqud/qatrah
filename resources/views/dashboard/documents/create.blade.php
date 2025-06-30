@@ -11,7 +11,7 @@
                         <h5>Add New Document</h5>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('dashboard.documents.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.documents.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
                                 <label for="name" class="form-label">Document Name</label>
@@ -33,7 +33,7 @@
                                     required>
                             </div>
                             <button type="submit" class="btn btn-primary">Save</button>
-                            <a href="{{ route('documents') }}" class="btn btn-secondary">Cancel</a>
+                            <a href="{{ route('admin.documents') }}" class="btn btn-secondary">Cancel</a>
                         </form>
                     </div>
                 </div>

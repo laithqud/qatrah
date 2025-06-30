@@ -12,62 +12,62 @@
     <div class="sidebar-menu">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a href="{{ route('dashboard') }}"
-                    class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                <a href="{{ route('admin.dashboard') }}"
+                    class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
                     <i class="bi bi-speedometer2 me-2"></i>
                     <span>الرئيسية</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{route('admin.dashboard')}}"
-                    class="nav-link {{ request()->routeIs('admin.dashbaord') ? 'active' : '' }}">
-                    <i class="bi bi-people me-2"></i>
-                    <span>الادمن</span>
+                <a href="{{ route('admin.admins.index') }}"
+                    class="nav-link {{ request()->routeIs('admin.admins.*') ? 'active' : '' }}">
+                    <i class="bi bi-shield-check me-2"></i>
+                    <span>إدارة المشرفين</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{route('user.dashboard')}}"
-                    class="nav-link {{ request()->routeIs('user.dashboard') ? 'active' : '' }}">
+                <a href="{{ route('admin.users.index') }}"
+                    class="nav-link {{ request()->routeIs('admin.users.*') ? 'active' : '' }}">
                     <i class="bi bi-people me-2"></i>
-                    <span>المستخدمين</span>
+                    <span>إدارة المستخدمين</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{route('forms')}}" class="nav-link {{ request()->routeIs('forms') ? 'active' : '' }}">
-                    <i class="bi bi-people me-2"></i>
+                <a href="{{ route('admin.forms') }}" class="nav-link {{ request()->routeIs('admin.forms') ? 'active' : '' }}">
+                    <i class="bi bi-link-45deg me-2"></i>
                     <span>رابط الانضمام</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('admin.gallery.index') }}"
-                    class="nav-link {{ request()->routeIs('admin.gallery.index') ? 'active' : '' }}">
-                    <i class="bi bi-people me-2"></i>
-                    <span>الصور</span>
+                    class="nav-link {{ request()->routeIs('admin.gallery.*') ? 'active' : '' }}">
+                    <i class="bi bi-images me-2"></i>
+                    <span>معرض الصور</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('dossiers') }}" class="nav-link {{ request()->routeIs('dossiers') ? 'active' : '' }}">
+                <a href="{{ route('admin.dossiers') }}" class="nav-link {{ request()->routeIs('admin.dossiers.*') ? 'active' : '' }}">
                     <i class="bi bi-box-seam me-2"></i>
                     <span>الدوسيات</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('documents') }}"
-                    class="nav-link {{ request()->routeIs('documents') ? 'active' : '' }}">
-                    <i class="bi bi-receipt me-2"></i>
-                    <span>الملخصات</span>
+                <a href="{{ route('admin.documents') }}"
+                    class="nav-link {{ request()->routeIs('admin.documents.*') ? 'active' : '' }}">
+                    <i class="bi bi-file-earmark-text me-2"></i>
+                    <span>الوثائق</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('testimonials') }}"
-                    class="nav-link {{ request()->routeIs('testimonials') ? 'active' : '' }}">
-                    <i class="bi bi-graph-up me-2"></i>
-                    <span>الاراء</span>
+                <a href="{{ route('admin.testimonials') }}"
+                    class="nav-link {{ request()->routeIs('admin.testimonials') ? 'active' : '' }}">
+                    <i class="bi bi-chat-quote me-2"></i>
+                    <span>آراء الطلاب</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="/home" class="nav-link {{ request()->is('home') ? 'active' : '' }}">
-                    <i class="bi bi-gear me-2"></i>
+                <a href="/home" target="_blank" class="nav-link">
+                    <i class="bi bi-globe me-2"></i>
                     <span>الموقع الرئيسي</span>
                 </a>
             </li>

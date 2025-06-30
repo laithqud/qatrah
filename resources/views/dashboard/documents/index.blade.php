@@ -8,7 +8,7 @@
             <div class="col-12">
                 <div class="d-flex justify-content-between align-items-center">
                     <h2>Documents</h2>
-                    <a href="{{ route('dashboard.documents.create') }}" class="btn btn-primary">
+                    <a href="{{ route('admin.documents.create') }}" class="btn btn-primary">
                         <i class="bi bi-plus-lg"></i> Add Document
                     </a>
                 </div>
@@ -53,7 +53,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <form action="{{ route('dashboard.documents.destroy', $document->id) }}" method="POST"
+                                        <form action="{{ route('admin.documents.destroy', $document->id) }}" method="POST"
                                             class="d-inline">
                                             @csrf
                                             @method('DELETE')

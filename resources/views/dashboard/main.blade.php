@@ -4,6 +4,12 @@
 
 @section('content')
     <div class="container-fluid py-4">
+        <!-- Welcome Header -->
+        <div class="admin-header text-center mb-4">
+            <h1 class="nunito-font">مرحباً بك في لوحة التحكم</h1>
+            <p class="nunito-font">إدارة نظام قطرة غيث التعليمي</p>
+        </div>
+
         <!-- Stats Cards -->
         <div class="row mb-4">
             <div class="col-md-3">
@@ -12,11 +18,11 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <h6 class="card-title">إجمالي المستخدمين</h6>
-                                <h3 class="mb-0">1,245</h3>
+                                <h3 class="mb-0">{{ $totalUsers ?? 0 }}</h3>
                             </div>
                             <i class="bi bi-people fs-1"></i>
                         </div>
-                        <small class="d-block mt-2">+12% عن الشهر الماضي</small>
+                        <small class="d-block mt-2">مسجلين في النظام</small>
                     </div>
                 </div>
             </div>
@@ -25,12 +31,12 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h6 class="card-title">إجمالي الطلبات</h6>
-                                <h3 class="mb-0">568</h3>
+                                <h6 class="card-title">إجمالي المشرفين</h6>
+                                <h3 class="mb-0">{{ $totalAdmins ?? 0 }}</h3>
                             </div>
-                            <i class="bi bi-cart fs-1"></i>
+                            <i class="bi bi-shield-check fs-1"></i>
                         </div>
-                        <small class="d-block mt-2">+5 طلبات جديدة</small>
+                        <small class="d-block mt-2">مشرفي النظام</small>
                     </div>
                 </div>
             </div>
@@ -39,12 +45,12 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h6 class="card-title">المبيعات</h6>
-                                <h3 class="mb-0">124</h3>
+                                <h6 class="card-title">الصور</h6>
+                                <h3 class="mb-0">{{ $totalImages ?? 0 }}</h3>
                             </div>
-                            <i class="bi bi-currency-dollar fs-1"></i>
+                            <i class="bi bi-images fs-1"></i>
                         </div>
-                        <small class="d-block mt-2">+8 عن الأمس</small>
+                        <small class="d-block mt-2">في المعرض</small>
                     </div>
                 </div>
             </div>
@@ -53,12 +59,12 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h6 class="card-title">الإيرادات</h6>
-                                <h3 class="mb-0">$12,345</h3>
+                                <h6 class="card-title">الوثائق</h6>
+                                <h3 class="mb-0">{{ $totalDocuments ?? 0 }}</h3>
                             </div>
-                            <i class="bi bi-graph-up fs-1"></i>
+                            <i class="bi bi-file-earmark-text fs-1"></i>
                         </div>
-                        <small class="d-block mt-2">+15% عن الشهر الماضي</small>
+                        <small class="d-block mt-2">متاحة للتحميل</small>
                     </div>
                 </div>
             </div>
@@ -69,51 +75,48 @@
             <div class="col-lg-8">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5>آخر الطلبات</h5>
-                        <a href="" class="btn btn-sm btn-outline-primary">عرض الكل</a>
+                        <h5>أحدث المستخدمين</h5>
+                        <a href="{{ route('admin.users.index') }}" class="btn btn-sm btn-outline-primary">عرض الكل</a>
                     </div>
                     <div class="card-body">
+                        @if(isset($recentUsers) && $recentUsers->count() > 0)
                         <div class="table-responsive">
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>العميل</th>
-                                        <th>التاريخ</th>
-                                        <th>الحالة</th>
-                                        <th>المبلغ</th>
+                                        <th>الاسم</th>
+                                        <th>البريد الإلكتروني</th>
+                                        <th>تاريخ التسجيل</th>
+                                        <th>الإجراءات</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($recentUsers as $user)
                                     <tr>
-                                        <td>1256</td>
-                                        <td>أحمد محمد</td>
-                                        <td>15/06/2023</td>
-                                        <td><span class="badge bg-success">مكتمل</span></td>
-                                        <td>$125.00</td>
+                                        <td>{{ $user->id }}</td>
+                                        <td>{{ $user->name ?? 'غير محدد' }}</td>
+                                        <td>{{ $user->email }}</td>
+                                        <td>{{ $user->created_at ? $user->created_at->format('Y/m/d') : 'غير محدد' }}</td>
+                                        <td>
+                                            <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-sm btn-primary">تعديل</a>
+                                        </td>
                                     </tr>
-                                    <tr>
-                                        <td>1255</td>
-                                        <td>سامي علي</td>
-                                        <td>14/06/2023</td>
-                                        <td><span class="badge bg-warning text-dark">قيد المعالجة</span></td>
-                                        <td>$89.50</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1254</td>
-                                        <td>ليلى حسن</td>
-                                        <td>14/06/2023</td>
-                                        <td><span class="badge bg-danger">ملغى</span></td>
-                                        <td>$45.00</td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
+                        @else
+                        <div class="text-center py-4">
+                            <i class="bi bi-people fs-1 text-muted"></i>
+                            <p class="text-muted mt-2">لا توجد مستخدمين مسجلين حتى الآن</p>
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4">
+            {{-- <div class="col-lg-4">
                 <div class="card">
                     <div class="card-header">
                         <h5>آخر النشاطات</h5>
@@ -147,10 +150,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
-        <!-- Recent Users -->
+        {{-- <!-- Recent Users -->
         <div class="row mt-4">
             <div class="col-12">
                 <div class="card">
@@ -188,7 +191,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 @endsection
 

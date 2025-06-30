@@ -43,7 +43,7 @@ class DocumentController extends Controller
             'page_count' => $request->page_count
         ]);
 
-        return redirect()->route('documents')
+        return redirect()->route('admin.documents')
                ->with('success', 'Document created successfully!');
     }
 

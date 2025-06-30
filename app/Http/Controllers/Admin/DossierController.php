@@ -39,7 +39,7 @@ class DossierController extends Controller
             'file_path' => $path // e.g., dossiers/filename.pdf
         ]);
 
-        return redirect()->route('dossiers')
+        return redirect()->route('admin.dossiers')
                ->with('success', 'Dossier uploaded successfully!');
     }
 

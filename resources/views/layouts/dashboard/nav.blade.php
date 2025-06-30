@@ -8,17 +8,19 @@
             <div class="dropdown">
                 <button class="btn btn-link dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown">
                     <img src="{{asset('images/hero.jpeg')}}" width="40" height="40" class="rounded-circle me-2">
-                    <span class="text-dark text-decoration-none">Admin </span>
+                    <span class="text-dark text-decoration-none">
+                        {{ auth('admin')->check() ? auth('admin')->user()->name : 'المشرف' }}
+                    </span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    {{-- <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i> الملف الشخصي</a>
+                    <li>
+                        <form method="POST" action="{{ route('admin.logout') }}">
+                            @csrf
+                            <button type="submit" class="dropdown-item">
+                                <i class="bi bi-box-arrow-left me-2"></i>تسجيل الخروج
+                            </button>
+                        </form>
                     </li>
-                    <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i> الإعدادات</a></li> --}}
-                    {{-- <li>
-                        <hr class="dropdown-divider">
-                    </li> --}}
-                    <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-left me-2"></i> تسجيل
-                            الخروج</a></li>
                 </ul>
             </div>
         </div>

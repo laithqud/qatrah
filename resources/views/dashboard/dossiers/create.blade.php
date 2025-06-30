@@ -11,7 +11,7 @@
                         <h5>Add New Dossier</h5>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('dossiers.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.dossiers.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
                                 <label for="title" class="form-label">Title (optional)</label>
@@ -24,7 +24,7 @@
                                 <div class="form-text">Allowed: PDF, Word, Excel, PowerPoint. Max: 10MB</div>
                             </div>
                             <button type="submit" class="btn btn-primary">Upload</button>
-                            <a href="{{ route('dossiers') }}" class="btn btn-secondary">Cancel</a>
+                            <a href="{{ route('admin.dossiers') }}" class="btn btn-secondary">Cancel</a>
                         </form>
                     </div>
                 </div>

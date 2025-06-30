@@ -30,7 +30,7 @@
                             style="height: 200px; object-fit: cover;">
                         <div class="card-body d-flex flex-column">
                             <div class="mt-auto text-end">
-                                <form action="{{ route('gallery.destroy', $image->id) }}" method="POST">
+                                <form action="{{ route('admin.gallery.destroy', $image->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-danger"
